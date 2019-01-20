@@ -1,15 +1,17 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<div *ngIf="informationList">
+<div *ngIf="informationList.length>0; else nothing">
     <table>
       <tbody>
         <div class="feed" *ngFor="let information of informationList" >
           <tr>
-            <td>{{information.name}}</td>
-            <td>{{information.description}}</td>
+            <td class="name"><i class="fas fa-award" (click)= "toggleFav(information)" [ngClass] = "information.favourite ? 'favourite' : 'normal'"></i>{{information.name}}</td>
+            <td class="description" [innerHTML] = 'information.description'></td>
           </tr>
           <br />
         </div>
     </tbody>
   </table>
-  </div>
+</div>
+
+<ng-template #nothing>
+  Sorry friend, there is no match.
+</ng-template>

@@ -12,6 +12,7 @@ import { Info } from '../info/info';
 export class InfoFeedComponent implements OnInit {
 
   informationList: Info[];
+  toggle: boolean = false;
 
   constructor(private informationService : InfosService, route: ActivatedRoute) {
     route.params.subscribe(val => {
@@ -21,5 +22,9 @@ export class InfoFeedComponent implements OnInit {
 
   ngOnInit() {
     this.informationList = this.informationService.getInfos();
+  }
+
+  toggleFav(information) {
+    information.favourite = !information.favourite;
   }
 }

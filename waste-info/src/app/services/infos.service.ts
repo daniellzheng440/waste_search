@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Info } from '../core/info/info';
+import { FavouriteComponent } from '../components/favourite/favourite.component';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,8 @@ export class InfosService {
         var item: Info = {
           // tslint:disable-next-line:max-line-length
           name: fetch[i].title,
-          description: fetch[i].body
+          description: fetch[i].body,
+          favourite: false
         };
         this.informationList.push(item);
       }
