@@ -1,0 +1,8 @@
+<div *ngIf="informationList">
+    <div class="feed" *ngFor="let information of informationList" >
+            <p>{{information.name}}</p>
+            <p>
+              {{information.description}}
+            </p>
+    </div>
+  </div>

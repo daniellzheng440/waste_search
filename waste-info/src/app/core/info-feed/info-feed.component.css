@@ -1,0 +1,16 @@
+.feed {
+    width: 100%;
+}
+.column {
+    margin-left: 5px;
+    margin-right: 5px;
+}  
+.recipe-card {
+    max-width: 500px;
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+mat-card {
+    width: 100%;
+    height: 100%;
+  }
