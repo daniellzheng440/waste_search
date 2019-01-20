@@ -5,7 +5,9 @@
     <Strong>Toronto Waste Lookup</Strong>
   </div>
   <div id="search">
-      <input class="form-control form-control-lg" type="text" placeholder="Search...">
-      <button type="submit" class="btn btn-success btn-lg"><i class="fa fa-search"></i></button>
+      <form (submit)= "onSubmit()">
+        <input class="form-control form-control-lg" type="text" placeholder="Search..." [(ngModel)]="keyWord" name = "search" (ngModelChange)="inputEmpty()">
+        <button type="submit" class="btn btn-success btn-lg"><i class="fa fa-search"></i></button>
+      </form>
   </div>
 </div>

@@ -1,0 +1,10 @@
+<div *ngIf="informationList">
+    <div class="feed" *ngFor="let information of informationList" >
+      <table>
+        <tr>
+          <td>{{information.name}}</td>
+          <td>{{information.description}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
