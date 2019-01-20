@@ -12,6 +12,12 @@ export class HeaderComponent implements OnInit {
   keyWord: String;
   constructor(private informationsService: InfosService, private router: Router) { }
 
+  inputEmpty(){
+    if (this.keyWord == ''){
+      this.router.navigate(['']);
+    }
+  }
+  
   onSubmit() {
     console.log(this.keyWord);
     this.informationsService.fetchAPI(this.keyWord);
