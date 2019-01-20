@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 import { Info } from '../core/info/info';
 
 @Injectable({
@@ -27,7 +26,7 @@ export class InfosService {
   //   console.log(data);
   // }
 
-  public getJSON(): Observable<any> {
+  public getJSON(){
     var address = 'https://secure.toronto.ca/cc_sr_v1/data/swm_waste_wizard_APR?limit=1000';
     return this.http.get(address)
   }

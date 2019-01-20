@@ -13,8 +13,10 @@ export class InfoFeedComponent implements OnInit {
 
   informationList: Info[];
 
-  constructor(private informationService : InfosService) {
+  constructor(private informationService : InfosService, route: ActivatedRoute) {
+    route.params.subscribe(val => {
       this.informationList = this.informationService.getInfos();
+    });
   }
 
   ngOnInit() {
