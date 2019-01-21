@@ -1,0 +1,26 @@
+#grad {
+    background-image: linear-gradient(to right, rgb(12, 161, 49) , rgb(10, 135, 173));
+    max-height: 5%;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    padding: 5% 0;
+  }
+
+#search{
+    margin: 2% 2% ;
+    width: 100%;
+    display: table;
+}
+
+#search input{
+    margin-right: 2%;
+    width: 79%;
+    display: table-cell;
+}
+#search button{
+    width: 10%;
+    position: relative;
+    display: table-cell;
+    background: green;
+}

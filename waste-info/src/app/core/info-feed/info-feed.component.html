@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngIf="informationList.length>0; else nothing">
+      <table>
+        <tbody>
+          <div class="feed" *ngFor="let information of informationList" >
+            <tr>
+              <td class="name"><i class="fas fa-star" (click)= "toggleFav(information)" [ngClass] = "information.favourite ? 'favourite' : 'normal'"></i>{{information.name}}</td>
+              <td class="description" [innerHTML] = 'information.description'></td>
+            </tr>
+            <br />
+          </div>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #nothing>
+    Sorry friend, there is no match.
+  </ng-template>
+</div>
