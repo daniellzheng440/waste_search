@@ -10,6 +10,11 @@ Favourite function
 Peresistent favourites between searches - Item that are favourited will be 
 marked as favourite in subsequent searches. Just don't delete anything from favourite list ;-) 
 ```
+
+## Hosting
+
+https://waste-lookup-shopify.herokuapp.com/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
