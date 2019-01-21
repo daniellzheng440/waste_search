@@ -7,7 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ```
 API search
 Favourite function
-Peresistent favourites between searches - Item that are favourited will be marked as favourite in subsequent searches
+Peresistent favourites between searches - Item that are favourited will be 
+marked as favourite in subsequent searches. Just don't delete anything from favourite list ;-) 
 ```
 ## Development server
 
