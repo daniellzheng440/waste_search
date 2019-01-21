@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MockInfoFeedComponent } from './core/mock-info-feed/mock-info-feed.component';
 import { InfoFeedComponent } from './core/info-feed/info-feed.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
 
 const appRoutes: Routes = [
   { path: '', component: MockInfoFeedComponent },
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     MockInfoFeedComponent,
     InfoFeedComponent,
+    FavouriteComponent
   ],
   imports: [
     RouterModule.forRoot(
