@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     MockInfoFeedComponent,
     InfoFeedComponent,
-    FavouriteComponent,
+    FavouriteComponent
   ],
   imports: [
     RouterModule.forRoot(

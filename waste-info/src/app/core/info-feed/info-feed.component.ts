@@ -17,11 +17,11 @@ export class InfoFeedComponent implements OnInit {
   toggle: boolean = false;
   favouriteList: Info[];
   // favouriteComponet: FavouriteComponent;
-  
+
   constructor(private informationService : InfosService, route: ActivatedRoute, 
               private favouriteService: FavouriteService) {
     route.params.subscribe(val => {
-      this.informationList = this.informationService.getInfos();
+      this.ngOnInit();
     });
   }
 

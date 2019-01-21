@@ -1,3 +1,24 @@
-<h2>
-  Favourites
-</h2>
+<div class = "container bg-success">
+  <h2 class = "text-primary">
+    Favourites
+  </h2>
+  <div *ngIf="favouriteList.length>0; else nothing">
+    <table>
+      <tbody>
+        <div class="feed" *ngFor="let picked of favouriteList">
+          <div *ngIf = "picked.favourite">
+          <tr>
+            <td class="name"><i class="fas fa-star" (click)= "toggleFav(picked)" [ngClass] = "picked.favourite ? 'favourite' : 'normal'"></i>{{picked.name}}</td>
+            <td class="description" [innerHTML] = 'picked.description'></td>
+          </tr>
+          <br />
+          </div>
+        </div>
+    </tbody>
+  </table>
+  </div>
+
+  <ng-template #nothing>
+  The Favourite List is empty. Add something!
+  </ng-template>
+</div> 

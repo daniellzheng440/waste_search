@@ -13,13 +13,13 @@ td, th {
   font-size: 1.5em;
 }
 
-.fa-award {
+.fa-star {
   margin-right: 2%;
 }
 .normal {
   color: grey;
 }
 .favourite {
-  color: blue;
+  color: green;
 }
   

@@ -1,53 +1,55 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Info } from '../core/info/info';
-import { FavouriteComponent } from '../components/favourite/favourite.component';
+import { FavouriteService } from './favourite.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfosService {
   fetch: any;
-  informationList: Info[];
+  informationList: Info[] = [];
+  favouriteList: Info[];
+  favouriteArr: String[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private favouriteService: FavouriteService) {
    }
 
+  //  query the API
   fetchAPI(keyWord) {
     this.informationList = [];
+    this.favouriteList = this.favouriteService.getFavourite();
     this.getJSON().subscribe(data => {
-      console.log(data[1]);
       this.setInformationList(data,keyWord);
     });
-    // console.log(fetch);
-    // console.log(this.fetch.hits);
   }
-
-  // printData(data){
-  //   console.log(data);
-  // }
 
   public getJSON(){
     var address = 'https://secure.toronto.ca/cc_sr_v1/data/swm_waste_wizard_APR?limit=1000';
     return this.http.get(address)
   }
 
+  // process the API
   setInformationList(fetch, keyWord): void {
-    // const jsonData = fetch;
+    // add name of favourites to an array
+    for (let i = 0; i < this.favouriteList.length; i++){
+      this.favouriteArr.push(this.favouriteList[i].name);
+    }
+    console.log(this.favouriteArr);
     for (let i = 0; i < fetch.length; i++) {
       if(fetch[i].keywords.includes(keyWord)){
         var item: Info = {
-          // tslint:disable-next-line:max-line-length
           name: fetch[i].title,
           description: fetch[i].body,
-          favourite: false
+          // create based on favourite array
+          favourite: this.favouriteArr.includes(fetch[i].title)
         };
         this.informationList.push(item);
       }
     }
-    console.log(this.informationList);
   }
 
+  // return statement
   getInfos(){
     return this.informationList;
   }
